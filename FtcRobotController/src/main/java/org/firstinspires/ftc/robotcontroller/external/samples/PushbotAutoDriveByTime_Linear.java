@@ -120,7 +120,7 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
         telemetry.update();
         sleep(1000);
     }
-    public void depotToCrater () {
+    public void depotToCrater() {
         robot.leftDrive.setPower(-1);
         robot.rightDrive.setPower(-1);
         runtime.reset();
