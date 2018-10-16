@@ -40,8 +40,8 @@ import com.qualcomm.robotcore.hardware.NormalizedColorSensor;
 import com.qualcomm.robotcore.hardware.NormalizedRGBA;
 import com.qualcomm.robotcore.hardware.SwitchableLight;
 
-/*
- * This is an example LinearOpMode that shows how to use a color sensor in a generic
+/**
+  * This is an example LinearOpMode that shows how to use a color sensor in a generic
  * way, insensitive which particular make or model of color sensor is used. The opmode
  * assumes that the color sensor is configured with a name of "color sensor".
  *
