@@ -1,3 +1,6 @@
+repositories {
+    google()
+}
 dependencies {
     compile project(':FtcRobotController')
     compile (name: 'RobotCore-release', ext: 'aar')
