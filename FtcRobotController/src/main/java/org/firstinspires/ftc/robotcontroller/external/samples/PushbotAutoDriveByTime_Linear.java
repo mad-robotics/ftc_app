@@ -51,7 +51,7 @@ import com.qualcomm.robotcore.util.Range;
 
 @TeleOp(name="Pushbot: Teleop Tank", group="Pushbot")
 @Disabled
-public class PushbotTeleopTank_Iterative extends OpMode{
+public class PushbotAutoDriveByTime_Linear extends OpMode{
 
     /* Declare OpMode members. */
     HardwarePushbot robot       = new HardwarePushbot(); // use the class created to define a Pushbot's hardware
