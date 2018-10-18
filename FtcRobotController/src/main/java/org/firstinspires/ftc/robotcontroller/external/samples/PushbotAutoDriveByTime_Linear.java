@@ -83,10 +83,43 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
+        //step 1 lower robot down from claw
+
+            //a rotate motor for arm to maximum extension
+
+            //b move robot so hook doesn't grab the handle again
+
+            //c retract arm back into robot
+
+
+        //step 2 move to depot
+
+            //a
+
+            //b
+
+            //c
+
+        //step 3 knock off gem
+
+            //a
+
+            //b
+
+            //c
+
+        //step 4 park on crater
+
+            //a
+
+            //b
+
+            //c
+
         // Step through each leg of the path, ensuring that the Auto mode has not been stopped along the way
 
         // Step 1:  Drive forward for 3 seconds
-        robot.leftDrive.setPower(FORWARD_SPEED);
+        /*robot.leftDrive.setPower(FORWARD_SPEED);
         robot.rightDrive.setPower(FORWARD_SPEED);
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() < 3.0)) {
@@ -120,6 +153,6 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
 
         telemetry.addData("Path", "Complete");
         telemetry.update();
-        sleep(1000);
+        sleep(1000);*/
     }
 }
