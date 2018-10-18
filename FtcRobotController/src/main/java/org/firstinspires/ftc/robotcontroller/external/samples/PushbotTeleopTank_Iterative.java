@@ -109,8 +109,8 @@ public class PushbotTeleopTank_Iterative extends OpMode{
             armOffset -= ARM_SPEED;
 
         // Move both servos to new position.  Assume servos are mirror image of each other.
-        armOffset = Range.clip(armOffset, -0.5, 0.5);
-        robot.arm.setPosition(robot.MID_SERVO + armOffset);
+        //armOffset = Range.clip(armOffset, -0.5, 0.5);
+        //robot.arm.setPosition(robot.MID_SERVO + armOffset);
         //robot.rightClaw.setPosition(robot.MID_SERVO - clawOffset);
 
         // Use gamepad buttons to move the arm up (Y) and down (A)
