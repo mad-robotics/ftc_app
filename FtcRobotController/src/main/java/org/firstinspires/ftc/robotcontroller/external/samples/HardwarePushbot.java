@@ -95,14 +95,11 @@ public class HardwarePushbot
         leftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         leftArm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-<<<<<<< HEAD
-=======
 
         //Define and initialize ALL installed servos.
         Servo leftClaw  = hwMap.get(Servo.class, "left_hand");
         Servo rightClaw = hwMap.get(Servo.class, "right_hand");
         leftClaw.setPosition(MID_SERVO);
         rightClaw.setPosition(MID_SERVO);
->>>>>>> 0a8cbe471e4ebe1eab216fb004608f1d7617e12c
     }
  }
