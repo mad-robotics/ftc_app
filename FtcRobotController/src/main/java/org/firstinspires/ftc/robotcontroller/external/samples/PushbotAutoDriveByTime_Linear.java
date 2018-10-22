@@ -110,11 +110,11 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
 
         //step 4 park on crater
 
-            //a
+            //a turn towards the crater
 
-            //b
+            //b yeet
 
-            //c
+            //c drive forward
 
         // Step through each leg of the path, ensuring that the Auto mode has not been stopped along the way
 
