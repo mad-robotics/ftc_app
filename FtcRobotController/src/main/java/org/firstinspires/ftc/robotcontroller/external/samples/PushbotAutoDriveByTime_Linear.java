@@ -26,7 +26,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
+//I dont understand what's going on right now
 package org.firstinspires.ftc.robotcontroller.external.samples;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
@@ -110,11 +110,11 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
 
         //step 4 park on crater
 
-            //a
+            //a turn towards the crater
 
-            //b
+            //b yeet
 
-            //c
+            //c drive forward
 
         // Step through each leg of the path, ensuring that the Auto mode has not been stopped along the way
 
