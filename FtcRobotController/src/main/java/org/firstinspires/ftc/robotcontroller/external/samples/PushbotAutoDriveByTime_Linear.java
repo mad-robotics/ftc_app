@@ -100,7 +100,7 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
 
             //c
 
-        //step 3 knock off gem
+        //step 3 knock off gem (Alex)
 
             //a
 
