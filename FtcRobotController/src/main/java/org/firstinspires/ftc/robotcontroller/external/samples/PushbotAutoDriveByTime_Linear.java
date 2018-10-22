@@ -87,18 +87,23 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
 
             //a rotate motor for arm to maximum extension
         robot.arm.setPower(1);
-
+        while (opModeIsActive() && (runtime.seconds() < 3.0)) { //this needs to be adjusted to stop at the correct time
+        }
+        robot.arm.setPower(0);
             //b move robot so hook doesn't grab the handle again
         robot.leftDrive.setPower(FORWARD_SPEED);
         robot.rightDrive.setPower(FORWARD_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 3.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 3.0)) { //this needs to be adjusted to stop at the correct time
         }
         robot.leftDrive.setPower(0);
         robot.rightDrive.setPower(0);
 
             //c retract arm back into robot
         robot.arm.setPower(-1);
+        while (opModeIsActive() && (runtime.seconds() < 3.0)) { //this needs to be adjusted to stop at the correct time
+        }
+        robot.arm.setPower(0);
 
         //step 2 move to depot
 
