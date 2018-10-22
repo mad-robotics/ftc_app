@@ -124,10 +124,23 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
         //step 4 park on crater
 
             //a turn towards the crater
-
+        robot.leftDrive.setPower(0.5);
+        robot.rightDrive.setPower(-0.5);
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < 1.0)) {
+            telemetry.adddata("Autonomous", "Turning time", runtime.seconds());
+            telemetry.update();
+        }
             //b yeet
 
             //c drive forward
+        robot.leftDrive.setPower(1);
+        robot.rightDrive.setPower(1);
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() <2.0)) {
+            telemetry.adddata("Autonomous", "Final stretch", runtime.seconds());
+            telemetry.update();
+        }
 
         // Step through each leg of the path, ensuring that the Auto mode has not been stopped along the way
 
