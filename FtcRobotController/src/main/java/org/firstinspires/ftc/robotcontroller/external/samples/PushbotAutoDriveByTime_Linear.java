@@ -90,6 +90,7 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
         while (opModeIsActive() && (runtime.seconds() < 3.0)) { //this needs to be adjusted to stop at the correct time
         }
         robot.arm.setPower(0);
+
             //b move robot so hook doesn't grab the handle again
         robot.leftDrive.setPower(FORWARD_SPEED);
         robot.rightDrive.setPower(FORWARD_SPEED);
@@ -128,8 +129,6 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
         robot.rightDrive.setPower(-0.5);
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() < 1.0)) {
-            telemetry.adddata("Autonomous", "Turning time", runtime.seconds());
-            telemetry.update();
         }
             //b yeet
 
