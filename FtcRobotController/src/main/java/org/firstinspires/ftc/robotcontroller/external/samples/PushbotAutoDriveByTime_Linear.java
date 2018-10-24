@@ -108,19 +108,20 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
 
         //step 2 move to depot
 
-            //a
+            //a locate depot
 
-            //b
+            //b set variables to adjust how long to turn/drive for
 
-            //c
+            //c get to set point to base next step on
+
 
         //step 3 knock off gem (Alex)
 
-            //a
+            //a identify gem
 
-            //b
+            //b knock gem off
 
-            //c
+            //c move to agreed upon end location
 
         //step 4 park on crater
 

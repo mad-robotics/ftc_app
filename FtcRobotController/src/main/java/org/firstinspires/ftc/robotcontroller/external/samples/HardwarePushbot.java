@@ -60,7 +60,6 @@ public class HardwarePushbot
     /* Public OpMode members. */
     public DcMotor  leftDrive   = null;
     public DcMotor  rightDrive  = null;
-    public DcMotor  leftArm     = null;
     public DcMotor  arm         = null;
 
     public static final double MID_SERVO       =  0.5 ;
