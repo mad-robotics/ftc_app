@@ -131,17 +131,17 @@ public class PushbotAutoDriveByTime_Linear extends LinearOpMode {
 
             //a turn towards the crater
         robot.leftDrive.setPower(0.5);
-        robot.rightDrive.setPower(-0.5);
+        robot.rightDrive.setPower(-0.5); // This would make the robot turn right. I think.
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 1.0)) {// Time is not final
         }
             //b yeet
 
             //c drive forward
         robot.leftDrive.setPower(1);
-        robot.rightDrive.setPower(1);
+        robot.rightDrive.setPower(1); // This makes the robot go forward.
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() <2.0)) {
+        while (opModeIsActive() && (runtime.seconds() <2.0)) {// Time is not final
         }
     }
 }
