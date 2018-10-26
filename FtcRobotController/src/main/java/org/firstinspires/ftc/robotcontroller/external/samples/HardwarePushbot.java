@@ -58,9 +58,10 @@ import static com.sun.tools.doclint.HtmlTag.HEAD;
 public class HardwarePushbot
 {
     /* Public OpMode members. */
-    public DcMotor  leftDrive   = null;
-    public DcMotor  rightDrive  = null;
-    public DcMotor  arm         = null;
+    public DcMotor  leftDrive       = null;
+    public DcMotor  rightDrive      = null;
+    public DcMotor  arm1            = null;
+    public DcMotor  arm2            = null;
 
     public static final double MID_SERVO       =  0.5 ;
     public static final double ARM_UP_POWER    =  0.45 ;
@@ -90,13 +91,15 @@ public class HardwarePushbot
         // Set all motors to zero power
         leftDrive.setPower(0);
         rightDrive.setPower(0);
-        arm.setPower(0);
+        arm1.setPower(0);
+        arm2.setPower(0);
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
         leftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        arm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        arm1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        arm2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         //Define and initialize ALL installed servos.
         Servo leftClaw  = hwMap.get(Servo.class, "left_hand");
