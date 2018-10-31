@@ -104,16 +104,23 @@ public class PushbotTeleopTank_Iterative extends OpMode{
         // Use gamepad buttons to move the arm up (Y) and down (A)
         if (gamepad1.y) {
             robot.arm1.setPower(robot.ARM_UP_POWER);
-            robot.arm2.setPower(-robot.ARM_UP_POWER);
         }
-        else if (gamepad1.a) {
+        else if (gamepad1.x) {
             robot.arm1.setPower(robot.ARM_DOWN_POWER);
-            robot.arm2.setPower(-robot.ARM_DOWN_POWER);
         }
         else {
             robot.arm1.setPower(0.0);
+        }
+        if(gamepad.b){
+            robot.arm2.(-robot.ARM_UP_POWER);
+        }
+        else if(gamepad.a){
+            robot.arm2.setPower(-robot.ARM_DOWN_POWER);
+        }
+        else {
             robot.arm2.setPower(0.0);
         }
+
         // Send telemetry message to signify robot running;
         telemetry.addData("left",  "%.2f", left);
         telemetry.addData("right", "%.2f", right);
