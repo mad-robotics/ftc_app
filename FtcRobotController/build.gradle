@@ -1,6 +1,6 @@
 /*
    build.gradle in FtcRobotController
-
+// try to fix it D:
    */
 
 apply plugin: 'com.android.library'
@@ -13,7 +13,7 @@ android {
     }
 
     compileSdkVersion 26
-    buildToolsVersion '28.0.2'
+    buildToolsVersion '28.0.3'
 
     //compileOptions {
     //    sourceCompatibility JavaVersion.VERSION_1_7
