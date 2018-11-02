@@ -111,10 +111,10 @@ public class PushbotTeleopTank_Iterative extends OpMode{
         else {
             robot.arm1.setPower(0.0);
         }
-        if(gamepad.b){
-            robot.arm2.(-robot.ARM_UP_POWER);
+        if(gamepad1.b){
+            robot.arm2.setPower(-robot.ARM_UP_POWER);
         }
-        else if(gamepad.a){
+        else if(gamepad1.a){
             robot.arm2.setPower(-robot.ARM_DOWN_POWER);
         }
         else {
