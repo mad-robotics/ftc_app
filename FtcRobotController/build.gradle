@@ -2,9 +2,7 @@
    build.gradle in FtcRobotController
 // try to fix it D:
    */
-
 apply plugin: 'com.android.library'
-
 android {
 
     defaultConfig {
@@ -12,7 +10,7 @@ android {
         targetSdkVersion 26
     }
 
-    compileSdkVersion 26
+    compileSdkVersion 26//19?
     buildToolsVersion '28.0.3'
 
     //compileOptions {
@@ -20,12 +18,13 @@ android {
     //    targetCompatibility JavaVersion.VERSION_1_7
     //}
 }
-
 repositories {
     google()
     flatDir {
         dirs '../libs'
     }
 }
-
 apply from: 'build.release.gradle'
+
+dependencies {
+}
