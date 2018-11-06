@@ -1,4 +1,4 @@
-//<<<<<<< HEAD
+
 //<?xml version="1.0" encoding="UTF-8"?>
 //<!--
 /*
@@ -16,7 +16,6 @@
 ** See the License for the specific language governing permissions and
 ** limi
 */
-//=======
 //
 // build.gradle in TeamCode
 //
@@ -33,6 +32,5 @@ android {
     buildToolsVersion '28.0.3'
     compileSdkVersion 26
 }
-//>>>>>>> 334507380e4c54d75b7184d94391407e60f4f3e7
 dependencies {
 }

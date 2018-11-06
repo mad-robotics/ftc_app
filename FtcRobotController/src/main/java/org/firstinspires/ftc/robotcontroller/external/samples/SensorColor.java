@@ -40,8 +40,8 @@ import com.qualcomm.robotcore.hardware.NormalizedColorSensor;
 import com.qualcomm.robotcore.hardware.NormalizedRGBA;
 import com.qualcomm.robotcore.hardware.SwitchableLight;
 
-/**
-  * This is an example LinearOpMode that shows how to use a color sensor in a generic
+/*
+ * This is an example LinearOpMode that shows how to use a color sensor in a generic
  * way, insensitive which particular make or model of color sensor is used. The opmode
  * assumes that the color sensor is configured with a name of "color sensor".
  *
@@ -51,8 +51,8 @@ import com.qualcomm.robotcore.hardware.SwitchableLight;
  * Use Android Studio to Copy this Class, and Paste it into your team's code folder with a new name.
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
-@TeleOp(name = "Color Sensor", group = "MRI")
-//@Disabled
+@TeleOp(name = "Sensor: Color", group = "Sensor")
+@Disabled
 public class SensorColor extends LinearOpMode {
 
   /** The colorSensor field will contain a reference to our color sensor hardware object */
