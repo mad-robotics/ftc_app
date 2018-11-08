@@ -49,7 +49,7 @@ import com.qualcomm.robotcore.util.Range;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="We go WHEEEEE (drive)", group="Pushbot")
+@TeleOp(name="Vroom Vroom, said Patrick", group="Pushbot")
 //@Disabled
 public class CuddlesQuadTeleOp extends OpMode{
 
