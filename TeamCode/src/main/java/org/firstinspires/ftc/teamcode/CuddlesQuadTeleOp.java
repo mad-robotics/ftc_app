@@ -27,7 +27,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package org.firstinspires.ftc.robotcontroller.external.samples;
+package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
@@ -54,7 +54,7 @@ import com.qualcomm.robotcore.util.Range;
 public class CuddlesQuadTeleOp extends OpMode{
 
     /* Declare OpMode members. */
-    HardwarePushbot robot       = new HardwarePushbot(); // use the class created to define a Pushbot's hardware
+    CuddlesQuadHardware robot       = new CuddlesQuadHardware(); // use the class created to define a Pushbot's hardware
                                                          // could also use HardwarePushbotMatrix class.
     final double    ARM_SPEED  = 0.02 ;                 // sets rate to move servo
 
