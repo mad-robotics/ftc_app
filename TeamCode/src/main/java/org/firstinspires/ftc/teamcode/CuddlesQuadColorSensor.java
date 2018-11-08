@@ -51,7 +51,7 @@ import com.qualcomm.robotcore.hardware.SwitchableLight;
  * Use Android Studio to Copy this Class, and Paste it into your team's code folder with a new name.
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
-@TeleOp(name = "Sensor: Color", group = "Sensor")
+@TeleOp(name = "Glitcy color sensor", group = "Sensor")
 //@Disabled
 public class CuddlesQuadColorSensor extends LinearOpMode {
 
