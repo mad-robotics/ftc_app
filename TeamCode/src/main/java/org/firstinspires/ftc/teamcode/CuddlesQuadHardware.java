@@ -63,6 +63,8 @@ public class CuddlesQuadHardware
     public DcMotor  arm1            = null;
     public DcMotor  arm2            = null;
 
+    public Servo    carrier         = null;
+
     public static final double MID_SERVO       =  0.5 ;
     public static final double ARM_UP_POWER    =  0.45 ;
     public static final double ARM_DOWN_POWER  = -0.45 ;
@@ -103,7 +105,11 @@ public class CuddlesQuadHardware
         arm2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         //Define and initialize ALL installed servos.
-        Servo carrier = hwMap.get(Servo.class, "markerCarrier");
+        carrier = hwMap.get(Servo.class, "markerCarrier");
         carrier.setPosition(MID_SERVO);
+    }
+
+    public void depot(double position) {
+        carrier.setPosition(position);
     }
  }

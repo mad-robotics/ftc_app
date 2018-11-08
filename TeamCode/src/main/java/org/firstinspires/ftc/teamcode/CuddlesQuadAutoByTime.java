@@ -83,6 +83,8 @@ public class CuddlesQuadAutoByTime extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
+        robot.depot(0.5);
+
         //step 1 lower robot down from claw
 
             //a rotate motor for arm to maximum extension
