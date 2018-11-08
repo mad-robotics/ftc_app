@@ -144,5 +144,8 @@ public class CuddlesQuadAutoByTime extends LinearOpMode {
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() <2.0)) {// Time is not final
         }
+            //d stop the robot from moving
+        robot.leftDrive.setPower(0);
+        robot.rightDrive.setPower(0); // This makes the robot stop in place
     }
 }
