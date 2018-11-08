@@ -51,7 +51,7 @@ import com.qualcomm.robotcore.hardware.SwitchableLight;
  * Use Android Studio to Copy this Class, and Paste it into your team's code folder with a new name.
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
-@TeleOp(name = "Sensor: Color", group = "Sensor")
+@TeleOp(name = "Glitcy color sensor", group = "Sensor")
 //@Disabled
 public class CuddlesQuadColorSensor extends LinearOpMode {
 
@@ -139,7 +139,8 @@ public class CuddlesQuadColorSensor extends LinearOpMode {
       /** Use telemetry to display feedback on the driver station. We show the conversion
        * of the colors to hue, saturation and value, and display the the normalized values
        * as returned from the sensor.
-       * @see <a href="http://infohost.nmt.edu/tcc/help/pubs/colortheory/web/hsv.html">HSV</a>*/
+       * @see <a href="http://infohost.nmt.edu/tcc/help/pubs/colortheory/web/hsv.html">HSV</a>
+       */
 
       Color.colorToHSV(colors.toColor(), hsvValues);
       telemetry.addLine()
@@ -171,7 +172,7 @@ public class CuddlesQuadColorSensor extends LinearOpMode {
       // intensities of the colors are likely what is most interesting. Here, for example, we boost
       // the signal on the colors while maintaining their relative balance so as to give more
       // vibrant visual feedback on the robot controller visual display.
-      float max = Math.max(Math.max(Math.max(colors.red, colors.green), colors.blue), colors.alpha);
+      float max = Math.max(Math.max(colors.red, colors.green), Math.max(colors.blue, colors.alpha));
       colors.red   /= max;
       colors.green /= max;
       colors.blue  /= max;

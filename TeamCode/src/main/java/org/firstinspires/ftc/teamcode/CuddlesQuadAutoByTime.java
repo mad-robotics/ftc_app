@@ -55,7 +55,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="Pushbot: Auto Drive By Time", group="Pushbot")
+@Autonomous(name="Auto (by time)", group="Pushbot")
 //@Disabled
 public class CuddlesQuadAutoByTime extends LinearOpMode {
 
@@ -144,5 +144,8 @@ public class CuddlesQuadAutoByTime extends LinearOpMode {
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() <2.0)) {// Time is not final
         }
+            //d stop the robot from moving
+        robot.leftDrive.setPower(0);
+        robot.rightDrive.setPower(0); // This makes the robot stop in place
     }
 }
