@@ -121,6 +121,9 @@ public class CuddlesQuadTeleOp extends OpMode{
             robot.arm2.setPower(0.0);
         }
 
+        robot.arm1.setPower(clip(robot.arm1.getPower(),0,1));
+        robot.arm2.setPower(clip(robot.arm2.getPower(),0,1));
+
         // Send telemetry message to signify robot running;
         telemetry.addData("left",  "%.2f", left);
         telemetry.addData("right", "%.2f", right);
