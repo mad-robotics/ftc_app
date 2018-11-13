@@ -93,14 +93,38 @@ public class CuddlesQuadTeleOp extends OpMode{
     public void loop() {
         double left;
         double right;
+        double gas;
+        double reverse;
 
         // Run wheels in tank mode (note: The joystick goes negative when pushed forwards, so negate it)
-        left = -gamepad1.left_stick_y;
-        right = -gamepad1.right_stick_y;
+        left = gamepad1.left_stick_x*2+1;
+        right = gamepad1.left_stick_x*-2+1;
+        gas = gamepad1.left_trigger;
+        reverse = gamepad1.right_trigger;
+
+        if(left > 1)
+        {
+            left = 1;
+        }
+        if(right > 1)
+        {
+            right = 1;
+        }
+
+        if(reverse != 0)
+        {
+            left    *= reverse;
+            right   *= reverse;
+        }
+        else
+        {
+            left    *= gas;
+            right   *= gas;
+        }
+
 
         robot.leftDrive.setPower(left);
         robot.rightDrive.setPower(right);
-
         // Use gamepad buttons to move the arm up (Y) and down (A)
         if (gamepad1.y) {
             robot.arm1.setPower(robot.ARM_UP_POWER);
@@ -111,6 +135,7 @@ public class CuddlesQuadTeleOp extends OpMode{
         else {
             robot.arm1.setPower(0.0);
         }
+
         if(gamepad1.b){
             robot.arm2.setPower(-robot.ARM_UP_POWER);
         }
