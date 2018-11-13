@@ -119,7 +119,7 @@ public class CuddlesQuadColorSensor extends LinearOpMode {
     // Loop until we are asked to stop
     while (opModeIsActive()) {
       // Check the status of the x button on the gamepad
-      bCurrState = gamepad1.x;
+      bCurrState = gamepad2.x;
 
       // If the button state is different than what it was, then act
       if (bCurrState != bPrevState) {

@@ -63,9 +63,17 @@ public class CuddlesQuadHardware
     public DcMotor  arm1            = null;
     public DcMotor  arm2            = null;
 
+<<<<<<< HEAD
     public static final double MID_SERVO       =  0.5;
     public static final double ARM_UP_POWER    =  0.45;
     public static final double ARM_DOWN_POWER  = -0.45;
+=======
+    public Servo    carrier         = null;
+
+    public static final double MID_SERVO       =  0.5 ;
+    public static final double ARM_UP_POWER    =  0.45 ;
+    public static final double ARM_DOWN_POWER  = -0.45 ;
+>>>>>>> 54644cb9fbe38377f2da093cffede04895c456a7
 
     /* local OpMode members. */
     HardwareMap hwMap           = null;
@@ -86,8 +94,8 @@ public class CuddlesQuadHardware
         rightDrive = hwMap.get(DcMotor.class, "rightDrive");
         arm1 = hwMap.get(DcMotor.class, "arm1");
         arm2 = hwMap.get(DcMotor.class, "arm2");
-        leftDrive.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
-        rightDrive.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
+        leftDrive.setDirection(DcMotor.Direction.REVERSE); // Set to REVERSE if using AndyMark motors
+        rightDrive.setDirection(DcMotor.Direction.FORWARD);// Set to FORWARD if using AndyMark motors
 
         // Set all motors to zero power
         leftDrive.setPower(0);
@@ -103,7 +111,11 @@ public class CuddlesQuadHardware
         arm2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         //Define and initialize ALL installed servos.
-        Servo carrier = hwMap.get(Servo.class, "markerCarrier");
+        carrier = hwMap.get(Servo.class, "markerCarrier");
         carrier.setPosition(MID_SERVO);
+    }
+
+    public void depot(double position) {
+        carrier.setPosition(position);
     }
  }
