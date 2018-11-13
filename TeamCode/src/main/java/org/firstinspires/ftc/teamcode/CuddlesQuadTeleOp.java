@@ -54,7 +54,7 @@ import com.qualcomm.robotcore.util.Range;
 public class CuddlesQuadTeleOp extends OpMode{
 
     /* Declare OpMode members. */
-    CuddlesQuadHardware robot       = new CuddlesQuadHardware(); // use the class created to define a Pushbot's hardware
+    CuddlesQuadHardware robot = new CuddlesQuadHardware(); // use the class created to define a Pushbot's hardware
                                                          // could also use HardwarePushbotMatrix class.
     final double    ARM_SPEED  = 0.02 ;                 // sets rate to move servo
 
@@ -146,6 +146,9 @@ public class CuddlesQuadTeleOp extends OpMode{
             robot.arm2.setPower(0.0);
         }
 
+        robot.arm1.setPower(clip(robot.arm1.getPower(),0,1));
+        robot.arm2.setPower(clip(robot.arm2.getPower(),0,1));
+
         // Send telemetry message to signify robot running;
         telemetry.addData("left",  "%.2f", left);
         telemetry.addData("right", "%.2f", right);
@@ -156,5 +159,10 @@ public class CuddlesQuadTeleOp extends OpMode{
      */
     @Override
     public void stop() {
+    }
+    public static double clip(double input, double min, double max) {
+        if (input<min) return min;
+        if (input>max) return max;
+        return input;
     }
 }
