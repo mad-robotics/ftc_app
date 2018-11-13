@@ -102,15 +102,6 @@ public class CuddlesQuadTeleOp extends OpMode{
         gas = gamepad1.left_trigger;
         reverse = gamepad1.right_trigger;
 
-        if(left > 1)
-        {
-            left = 1;
-        }
-        if(right > 1)
-        {
-            right = 1;
-        }
-
         if(reverse != 0)
         {
             left    *= reverse;
@@ -122,6 +113,8 @@ public class CuddlesQuadTeleOp extends OpMode{
             right   *= gas;
         }
 
+        left  = clip(left, -1, 1);
+        right = clip(right, -1, 1);
 
         robot.leftDrive.setPower(left);
         robot.rightDrive.setPower(right);
@@ -146,8 +139,8 @@ public class CuddlesQuadTeleOp extends OpMode{
             robot.arm2.setPower(0.0);
         }
 
-        robot.arm1.setPower(clip(robot.arm1.getPower(),0,1));
-        robot.arm2.setPower(clip(robot.arm2.getPower(),0,1));
+        robot.arm1.setPower(clip(robot.arm1.getPower(),-1,1));
+        robot.arm2.setPower(clip(robot.arm2.getPower(),-1,1));
 
         // Send telemetry message to signify robot running;
         telemetry.addData("left",  "%.2f", left);
