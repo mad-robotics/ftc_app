@@ -63,17 +63,11 @@ public class CuddlesQuadHardware
     public DcMotor  arm1            = null;
     public DcMotor  arm2            = null;
 
-<<<<<<< HEAD
     public static final double MID_SERVO       =  0.5;
     public static final double ARM_UP_POWER    =  0.45;
     public static final double ARM_DOWN_POWER  = -0.45;
-=======
-    public Servo    carrier         = null;
 
-    public static final double MID_SERVO       =  0.5 ;
-    public static final double ARM_UP_POWER    =  0.45 ;
-    public static final double ARM_DOWN_POWER  = -0.45 ;
->>>>>>> 54644cb9fbe38377f2da093cffede04895c456a7
+    public Servo    carrier         = null;
 
     /* local OpMode members. */
     HardwareMap hwMap           = null;
