@@ -29,9 +29,7 @@
 
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.eventloop.opmode.*;
 import com.qualcomm.robotcore.util.Range;
 
 /**
@@ -54,7 +52,7 @@ import com.qualcomm.robotcore.util.Range;
 public class CuddlesQuadTeleOp extends OpMode{
 
     /* Declare OpMode members. */
-    CuddlesQuadHardware robot       = new CuddlesQuadHardware(); // use the class created to define a Pushbot's hardware
+    CuddlesQuadHardware robot = new CuddlesQuadHardware(); // use the class created to define a Pushbot's hardware
                                                          // could also use HardwarePushbotMatrix class.
     final double    ARM_SPEED  = 0.02 ;                 // sets rate to move servo
 
@@ -93,14 +91,31 @@ public class CuddlesQuadTeleOp extends OpMode{
     public void loop() {
         double left;
         double right;
+        double gas;
+        double reverse;
 
         // Run wheels in tank mode (note: The joystick goes negative when pushed forwards, so negate it)
-        left = -gamepad1.left_stick_y;
-        right = -gamepad1.right_stick_y;
+        left = gamepad1.left_stick_x*2+1;
+        right = gamepad1.left_stick_x*-2+1;
+        gas = gamepad1.left_trigger;
+        reverse = gamepad1.right_trigger;
+
+        if(reverse != 0)
+        {
+            left    *= reverse;
+            right   *= reverse;
+        }
+        else
+        {
+            left    *= gas;
+            right   *= gas;
+        }
+
+        left  = clip(left, -1, 1);
+        right = clip(right, -1, 1);
 
         robot.leftDrive.setPower(left);
         robot.rightDrive.setPower(right);
-
         // Use gamepad buttons to move the arm up (Y) and down (A)
         if (gamepad1.y) {
             robot.arm1.setPower(robot.ARM_UP_POWER);
@@ -111,6 +126,7 @@ public class CuddlesQuadTeleOp extends OpMode{
         else {
             robot.arm1.setPower(0.0);
         }
+
         if(gamepad1.b){
             robot.arm2.setPower(-robot.ARM_UP_POWER);
         }
@@ -120,6 +136,9 @@ public class CuddlesQuadTeleOp extends OpMode{
         else {
             robot.arm2.setPower(0.0);
         }
+
+        robot.arm1.setPower(clip(robot.arm1.getPower(),-1,1));
+        robot.arm2.setPower(clip(robot.arm2.getPower(),-1,1));
 
         // Send telemetry message to signify robot running;
         telemetry.addData("left",  "%.2f", left);
@@ -131,5 +150,10 @@ public class CuddlesQuadTeleOp extends OpMode{
      */
     @Override
     public void stop() {
+    }
+    public static double clip(double input, double min, double max) {
+        if (input<min) return min;
+        if (input>max) return max;
+        return input;
     }
 }
