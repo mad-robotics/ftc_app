@@ -58,7 +58,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class CuddlesQuadAutoByTime extends LinearOpMode {
 
     /* Declare OpMode members. */
-    CuddlesQuadHardware     robot   = new CuddlesQuadHardware();   // Use a Pushbot's hardware
+    private CuddlesQuadHardware     robot   = new CuddlesQuadHardware();   // Use a Pushbot's hardware
     private ElapsedTime     runtime = new ElapsedTime();
 
 
@@ -148,20 +148,6 @@ public class CuddlesQuadAutoByTime extends LinearOpMode {
         robot.leftDrive.setPower(0);
         robot.rightDrive.setPower(0); // This makes the robot stop in place
         */
-        drive(robot, -1, -1);
-        runtime.reset();
-        while (opModeIsActive() && runtime.seconds()<1.0) {
-            telemetry.addData("Time", (runtime.seconds()+"    ").substring(0,4));
-            telemetry.update();
-        }
-        drive(robot);
-    }
-
-    private static void drive(CuddlesQuadHardware r, double lPower, double rPower) {
-        r.leftDrive.setPower(lPower);
-        r.rightDrive.setPower(rPower);
-    }
-    private static void drive(CuddlesQuadHardware r) {
-        drive(r,0,0);
+        robot.drive( -1, -1, 0.75);
     }
 }

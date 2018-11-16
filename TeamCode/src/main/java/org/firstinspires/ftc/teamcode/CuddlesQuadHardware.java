@@ -104,6 +104,20 @@ public class CuddlesQuadHardware
         carrier.setPosition(MID_SERVO);
     }
 
+    public void drive(double lPower, double rPower, double secs) {
+        ElapsedTime t = new ElapsedTime();
+        leftDrive.setPower(lPower);
+        rightDrive.setPower(rPower);
+        t.reset();
+        while (t.seconds()<secs) {}
+        leftDrive.setPower(0);
+        rightDrive.setPower(0);
+    }
+
+    public void drive() {
+        drive(0,0,0);
+    }
+
     public void depot(double position) {
         carrier.setPosition(position);
     }
