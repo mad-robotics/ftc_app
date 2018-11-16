@@ -53,46 +53,41 @@ public class CuddlesQuadTeleOp extends OpMode{
 
     /* Declare OpMode members. */
     CuddlesQuadHardware robot = new CuddlesQuadHardware(); // use the class created to define a Pushbot's hardware
-                                                         // could also use HardwarePushbotMatrix class.
-    final double    ARM_SPEED  = 0.02 ;                 // sets rate to move servo
+                                                           // could also use HardwarePushbotMatrix class.
+    final double    ARM_SPEED  = 0.02 ;                    // sets rate to move servo
+
+    double left;
+    double right;
+    double gas;
+    double reverse;
 
     /*
      * Code to run ONCE when the driver hits INIT
      */
     @Override
     public void init() {
-        /* Initialize the hardware variables.
-         * The init() method of the hardware class does all the work here
-         */
+        // Initialize the hardware variables.
+        // The init() method of the hardware class does all the work here
         robot.init(hardwareMap);
 
         // Send telemetry message to signify robot waiting;
         telemetry.addData("Say", "Hello Saint");    //
     }
 
-    /*
-     * Code to run REPEATEDLY after the driver hits INIT, but before they hit PLAY
-     */
+     // Code to run REPEATEDLY after the driver hits INIT, but before they hit PLAY
     @Override
     public void init_loop() {
     }
 
-    /*
-     * Code to run ONCE when the driver hits PLAY
-     */
+     // Code to run ONCE when the driver hits PLAY
     @Override
     public void start() {
     }
 
-    /*
-     * Code to run REPEATEDLY after the driver hits PLAY but before they hit STOP
-     */
+     // Code to run REPEATEDLY after the driver hits PLAY but before they hit STOP
+
     @Override
     public void loop() {
-        double left;
-        double right;
-        double gas;
-        double reverse;
 
         // Run wheels in tank mode (note: The joystick goes negative when pushed forwards, so negate it)
         gas     = gamepad1.left_trigger;
