@@ -111,6 +111,15 @@ public class CuddlesQuadTeleOp extends OpMode{
             right   *= gas;
         }
 
+        if(gamepad1.left_stick_button)
+        {
+            left *= 1.5;
+        }
+        if(gamepad1.right_stick_button)
+        {
+            right *= 1.5;
+        }
+
         left  = clip(left, -1, 1);
         right = clip(right, -1, 1);
 
