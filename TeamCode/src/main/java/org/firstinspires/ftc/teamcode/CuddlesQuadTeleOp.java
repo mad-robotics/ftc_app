@@ -90,10 +90,10 @@ public class CuddlesQuadTeleOp extends OpMode{
     public void loop() {
 
         // Run wheels in tank mode (note: The joystick goes negative when pushed forwards, so negate it)
-        gas     = gamepad1.left_trigger;
+        reverse = gamepad1.left_trigger;
         left    = gamepad1.left_stick_x*2+1;
         right   = gamepad1.left_stick_x*-2+1;
-        reverse = gamepad1.right_trigger;
+        gas     = gamepad1.right_trigger;
 
         if(reverse != 0)
         {
