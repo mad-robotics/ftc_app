@@ -121,15 +121,9 @@ public class CuddlesQuadTeleOp extends OpMode{
         else if (gamepad1.x) robot.arm1.setPower(robot.ARM_DOWN_POWER);
         else robot.arm1.setPower(0.0);
 
-        if(gamepad1.b){
-            robot.arm2.setPower(-robot.ARM_UP_POWER);
-        }
-        else if(gamepad1.a){
-            robot.arm2.setPower(-robot.ARM_DOWN_POWER);
-        }
-        else {
-            robot.arm2.setPower(0.0);
-        }
+        if(gamepad1.b) robot.arm2.setPower(-robot.ARM_UP_POWER);
+        else if(gamepad1.a) robot.arm2.setPower(-robot.ARM_DOWN_POWER);
+        else robot.arm2.setPower(0.0);
 
         robot.arm1.setPower(clip(robot.arm1.getPower(),-1,1));
         robot.arm2.setPower(clip(robot.arm2.getPower(),-1,1));
