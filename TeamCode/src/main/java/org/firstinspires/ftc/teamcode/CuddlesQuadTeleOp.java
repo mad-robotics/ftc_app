@@ -111,30 +111,15 @@ public class CuddlesQuadTeleOp extends OpMode{
             right   *= gas;
         }
 
-        if(gamepad1.left_stick_button)
-        {
-            left *= 1.5;
-        }
-        if(gamepad1.right_stick_button)
-        {
-            right *= 1.5;
-        }
-
-        left  = clip(left, -1, 1);
-        right = clip(right, -1, 1);
+        if(gamepad1.left_stick_button) left *= 1.5;
+        if(gamepad1.right_stick_button)right *= 1.5;
 
         robot.leftDrive.setPower(left);
         robot.rightDrive.setPower(right);
         // Use gamepad buttons to move the arm up (Y) and down (A)
-        if (gamepad1.y) {
-            robot.arm1.setPower(robot.ARM_UP_POWER);
-        }
-        else if (gamepad1.x) {
-            robot.arm1.setPower(robot.ARM_DOWN_POWER);
-        }
-        else {
-            robot.arm1.setPower(0.0);
-        }
+        if (gamepad1.y) robot.arm1.setPower(robot.ARM_UP_POWER);
+        else if (gamepad1.x) robot.arm1.setPower(robot.ARM_DOWN_POWER);
+        else robot.arm1.setPower(0.0);
 
         if(gamepad1.b){
             robot.arm2.setPower(-robot.ARM_UP_POWER);
