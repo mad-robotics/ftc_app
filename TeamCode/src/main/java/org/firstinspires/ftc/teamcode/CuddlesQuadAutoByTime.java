@@ -58,8 +58,8 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class CuddlesQuadAutoByTime extends LinearOpMode {
 
     /* Declare OpMode members. */
-    private CuddlesQuadHardware     robot   = new CuddlesQuadHardware();   // Use a Pushbot's hardware
-    private ElapsedTime     runtime = new ElapsedTime();
+    private CuddlesQuadHardware robot   = new CuddlesQuadHardware();   // Use a Pushbot's hardware
+    //private ElapsedTime       runtime = new ElapsedTime();
 
 
     static final double     FORWARD_SPEED = 0.6;
@@ -79,45 +79,14 @@ public class CuddlesQuadAutoByTime extends LinearOpMode {
         telemetry.update();
 
         // Wait for the game to start (driver presses PLAY)
-        waitForStart();/*
-
-        robot.depot(0.5);
+        waitForStart();
 
         //step 1 lower robot down from claw
-
-            //a rotate motor for arm to maximum extension
-        robot.arm1.setPower(1);
-        robot.arm2.setPower(1);
-        while (opModeIsActive() && (runtime.seconds() < 3.0)) { //this needs to be adjusted to stop at the correct time
-        }
-        robot.arm1.setPower(0);
-        robot.arm2.setPower(0);
-
-            //b move robot so hook doesn't grab the handle again
-        robot.leftDrive.setPower(FORWARD_SPEED);
-        robot.rightDrive.setPower(FORWARD_SPEED);
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 3.0)) { //this needs to be adjusted to stop at the correct time
-        }
-        robot.leftDrive.setPower(0);
-        robot.rightDrive.setPower(0);
-
-            //c retract arm back into robot
-        robot.arm1.setPower(-1);
-        robot.arm2.setPower(-1);
-        while (opModeIsActive() && (runtime.seconds() < 3.0)) { //this needs to be adjusted to stop at the correct time
-        }
-        robot.arm1.setPower(0);
-        robot.arm2.setPower(0);
 
         //step 2 move to depot
 
             //a locate depot
-        //robot.leftDrive.setPower();
-        //robot.rightDrive.setPower();
-            //b set variables to adjust how long to turn/drive for
-
-            //c get to set point to base next step on
+            //robot.drive(0,0,0); //Fix times and powers
 
 
         //step 3 knock off gem (Alex)
@@ -130,24 +99,11 @@ public class CuddlesQuadAutoByTime extends LinearOpMode {
 
         //step 4 park on crater
 
-            //a turn towards the crater
-        robot.leftDrive.setPower(0.5);
-        robot.rightDrive.setPower(-0.5); // This would make the robot turn right. I think.
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1.0)) {// Time is not final
-        }
-            //b yeet
+            //robot.drive(0.5,-0.5,1.0);
+            //b
 
             //c drive forward
-        robot.leftDrive.setPower(1);
-        robot.rightDrive.setPower(1); // This makes the robot go forward.
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() <2.0)) {// Time is not final
-        }
-            //d stop the robot from moving
-        robot.leftDrive.setPower(0);
-        robot.rightDrive.setPower(0); // This makes the robot stop in place
-        */
-        robot.drive( -1, -1, 0.75);
+            //robot.drive(1,1,2.0);
+        robot.drive( -1, -1, 1); //just straight back
     }
 }
