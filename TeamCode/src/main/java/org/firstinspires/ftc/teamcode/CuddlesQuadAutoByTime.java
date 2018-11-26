@@ -104,6 +104,6 @@ public class CuddlesQuadAutoByTime extends LinearOpMode {
 
             //c drive forward
             //robot.drive(1,1,2.0);
-        robot.drive( -1, -1, 1); //just straight back
+        robot.drive( 1, 1, 2.5); //just straight back
     }
 }

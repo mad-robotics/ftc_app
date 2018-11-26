@@ -101,7 +101,6 @@ public class CuddlesQuadHardware
 
         //Define and initialize ALL installed servos.
         carrier = hwMap.get(Servo.class, "markerCarrier");
-        carrier.setPosition(MID_SERVO);
     }
 
     public void drive(double leftPower, double rightPower, double seconds) {
