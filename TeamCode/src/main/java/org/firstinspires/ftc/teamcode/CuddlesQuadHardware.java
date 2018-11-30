@@ -119,14 +119,4 @@ public class CuddlesQuadHardware
     public void drive() {
         drive(0,0);
     }
-
-    public void driveBySquare(int x, int y){
-        //top left corner = 0,0
-        //top right corner = 0,6
-        //bottom left corner = 6,0
-        //bottom right corner = 6,6
-        //drive 1 square at a time
-        //avoid squares 2,2;2,3;3,2;3,3
-
-    }
  }
