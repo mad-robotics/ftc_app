@@ -83,7 +83,7 @@ public class CuddlesQuadHardware
         // Define and Initialize Motors
         leftDrive  = hwMap.get(DcMotor.class, "leftDrive");
         rightDrive = hwMap.get(DcMotor.class, "rightDrive");
-        lifter = hwMap.get(DcMotor.class, "arm1");
+        lifter     = hwMap.get(DcMotor.class, "arm");
         leftDrive.setDirection(DcMotor.Direction.REVERSE); // Set to REVERSE if using AndyMark motors
         rightDrive.setDirection(DcMotor.Direction.FORWARD);// Set to FORWARD if using AndyMark motors
 

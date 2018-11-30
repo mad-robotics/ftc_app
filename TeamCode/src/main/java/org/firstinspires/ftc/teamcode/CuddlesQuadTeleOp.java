@@ -64,6 +64,7 @@ public class CuddlesQuadTeleOp extends OpMode{
     double right;
     double gas;
     double reverse;
+    double mark;
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -116,6 +117,12 @@ public class CuddlesQuadTeleOp extends OpMode{
         robot.drive(left,right);
         // Use gamepad buttons to move the arm up (Y) and down (A)
         robot.lifter.setPower(-gamepad1.right_stick_y);
+
+        if(gamepad1.left_bumper) mark = 0.05;
+        else if(gamepad1.right_bumper) mark = -0.05;
+        else mark = 0;
+
+        robot.carrier.setPosition(clip(robot.carrier.getPosition()+mark,0,1));
 
         // Send telemetry message to signify robot running;
         telemetry.addData("left",  "%.2f", left);
