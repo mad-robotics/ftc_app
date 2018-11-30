@@ -86,7 +86,7 @@ public class CuddlesQuadAutoByTime extends LinearOpMode {
         //step 2 move to depot
 
             //a locate depot
-            //robot.drive(0,0,0); //Fix times and powers
+            //robot.drive(); //Fix times and powers
 
 
         //step 3 knock off gem (Alex)
@@ -104,6 +104,7 @@ public class CuddlesQuadAutoByTime extends LinearOpMode {
 
             //c drive forward
             //robot.drive(1,1,2.0);
-        robot.drive( 1, 1, 2.5); //just straight back
+        robot.drive( 1, 1, 3); //just straight back
+        robot.carrier.setPosition(0);
     }
 }
