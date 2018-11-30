@@ -94,8 +94,8 @@ public class CuddlesQuadHardware
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
-        leftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        rightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        leftDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        rightDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         lifter.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         //Define and initialize ALL installed servos.

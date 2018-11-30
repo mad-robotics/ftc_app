@@ -76,7 +76,7 @@ public class CuddlesQuadTeleOp extends OpMode{
         robot.init(hardwareMap);
 
         // Send telemetry message to signify robot waiting;
-        telemetry.addData("Say", "Your robot is now reggie!");    //
+        telemetry.addData("Say", "Your robot is now reggie");    //
     }
 
      // Code to run REPEATEDLY after the driver hits INIT, but before they hit PLAY
@@ -99,6 +99,7 @@ public class CuddlesQuadTeleOp extends OpMode{
         left = gamepad1.left_stick_x * 2 + 1;
         right = gamepad1.left_stick_x * -2 + 1;
         gas = gamepad1.right_trigger;
+        mark = robot.carrier.getPosition();
 
         if(reverse != 0)
         {
@@ -118,11 +119,11 @@ public class CuddlesQuadTeleOp extends OpMode{
         // Use gamepad buttons to move the arm up (Y) and down (A)
         robot.lifter.setPower(-gamepad1.right_stick_y);
 
-        if(gamepad1.left_bumper) mark = 0.05;
-        else if(gamepad1.right_bumper) mark = -0.05;
-        else mark = 0;
+        if(gamepad1.left_bumper) mark += 0.05;
+        else if(gamepad1.right_bumper) mark -= 0.05;
+        mark = clip(mark,0,1);
 
-        robot.carrier.setPosition(clip(robot.carrier.getPosition()+mark,0,1));
+        //robot.carrier.setPosition(mark);
 
         // Send telemetry message to signify robot running;
         telemetry.addData("left",  "%.2f", left);
