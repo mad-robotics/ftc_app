@@ -29,7 +29,8 @@
 
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.*;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
@@ -60,9 +61,9 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="Encoder Auto (by distance)", group="Pushbot")
+@Autonomous(name="[crater] Encoder Auto (by distance)", group="Testing")
 //@Disabled
-public class CuddlesSquadEncoderAuto extends LinearOpMode {
+public class CuddlesSquadEncoderCrater extends LinearOpMode {
 
     /* Declare OpMode members. */
     CuddlesQuadHardware     robot   = new CuddlesQuadHardware();   // Use a Pushbot's hardware
@@ -73,7 +74,7 @@ public class CuddlesSquadEncoderAuto extends LinearOpMode {
     private static final double     WHEEL_DIAMETER_INCHES   = 4.0 ;     // For figuring circumference
     private static final double     COUNTS_PER_INCH         = (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) /
             (WHEEL_DIAMETER_INCHES * Math.PI);
-    private static final double     DRIVE_SPEED             = 0.8;
+    private static final double     DRIVE_SPEED             = 1.0;
     private static final double     TURN_SPEED              = 0.5;
 
     @Override
@@ -107,7 +108,7 @@ public class CuddlesSquadEncoderAuto extends LinearOpMode {
         // Step through each leg of the path,
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
         encoderDrive(DRIVE_SPEED,  48,  48, 5.0);  // S1: Forward 47 Inches with 5 Sec timeout
-        //encoderDrive(TURN_SPEED,   12, -12, 4.0);  // S2: Turn Right 12 Inches with 4 Sec timeout
+        encoderDrive(TURN_SPEED,   12, -12, 4.0);  // Turn 135 degrees clockwise! S2: Turn Right 12 Inches with 4 Sec timeout
         //encoderDrive(DRIVE_SPEED, -24, -24, 4.0);  // S3: Reverse 24 Inches with 4 Sec timeout
 
         robot.carrier.setPosition(1.0);

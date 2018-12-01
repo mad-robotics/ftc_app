@@ -47,7 +47,7 @@ import com.qualcomm.robotcore.hardware.*;
  * Use Android Studio to Copy this Class, and Paste it into your team's code folder with a new name.
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
-@TeleOp(name = "TABLE IS STROBE", group = "Sensor")
+@TeleOp(name = "TABLE IS STROBE", group = "Sensor (test)")
 //@Disabled
 public class CuddlesQuadColorSensor extends LinearOpMode {
 
