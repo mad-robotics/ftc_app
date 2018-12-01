@@ -56,10 +56,6 @@ public class CuddlesQuadTeleOp extends OpMode{
                                                            // could also use HardwarePushbotMatrix class.
     final double    ARM_SPEED  = 0.02 ;                    // sets rate to move servo
 
-
-
-
-
     double left;
     double right;
     double gas;
@@ -123,7 +119,7 @@ public class CuddlesQuadTeleOp extends OpMode{
         else if(gamepad1.right_bumper) mark -= 0.05;
         mark = clip(mark,0,1);
 
-        //robot.carrier.setPosition(mark);
+        robot.carrier.setPosition(mark);
 
         // Send telemetry message to signify robot running;
         telemetry.addData("left",  "%.2f", left);

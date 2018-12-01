@@ -104,8 +104,7 @@ public class CuddlesQuadHardware
 
     public void drive(double leftPower, double rightPower, double seconds) {
         ElapsedTime t = new ElapsedTime();
-        leftDrive.setPower(leftPower);
-        rightDrive.setPower(rightPower);
+        drive(leftPower, rightPower);
         t.reset();
         while (t.seconds()<seconds) {}
         drive();
