@@ -72,7 +72,7 @@ public class CuddlesQuadTeleOp extends OpMode{
         robot.init(hardwareMap);
 
         // Send telemetry message to signify robot waiting;
-        telemetry.addData("Say", "Your robot is now reggie");    //
+        telemetry.addData("Say", "Prepare yourself.");    //
     }
 
      // Code to run REPEATEDLY after the driver hits INIT, but before they hit PLAY
@@ -131,6 +131,8 @@ public class CuddlesQuadTeleOp extends OpMode{
      */
     @Override
     public void stop() {
+        telemetry.addData("Message", "Did we fail again?");
+        telemetry.addData("I hope not. That'd be embarrassing ",")");
     }
     public static double clip(double input, double min, double max) {
         if (input<min) return min;
