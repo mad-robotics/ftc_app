@@ -54,7 +54,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  */
 
 @Autonomous(name="Time Auto [depot]", group="Pushbot")
-//@Disabled
+@Disabled
 public class CuddlesQuadAutoByTime extends LinearOpMode {
 
     /* Declare OpMode members. */
