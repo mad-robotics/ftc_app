@@ -60,7 +60,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="[depot] Encoder Auto (by distance)", group="Testing")
+@Autonomous(name="Distance Auto [depot]", group="Working")
 //@Disabled
 public class CuddlesSquadEncoderDepot extends LinearOpMode {
 
@@ -109,17 +109,20 @@ public class CuddlesSquadEncoderDepot extends LinearOpMode {
         encoderDrive(DRIVE_SPEED,  48,  48, 5.0);  // S1: Forward 47 Inches with 5 Sec timeout
 
         robot.carrier.setPosition(1.0);
-        sleep(1000);     // pause for servos to move
+        sleep(1500);     // pause for servos to move
+        robot.carrier.setPosition(0.0);
+        sleep(1500);     // pause for servos to move
 
-        encoderDrive(TURN_SPEED,   15, -15, 4.0);  // Turn 135 degrees clockwise! S2: Turn Right 12 Inches with 4 Sec timeout
-        encoderDrive(DRIVE_SPEED, 90, 90, 8.0);  // S3: Reverse 24 Inches with 4 Sec timeout
+        encoderDrive(DRIVE_SPEED, -8.0, -8.0, 2.0);
+        encoderDrive(TURN_SPEED,   22.5, -22.5, 4.0);  // Turn 135 degrees clockwise! S2: Turn Right 12 Inches with 4 Sec timeout
+        encoderDrive(DRIVE_SPEED, 80, 80, 7.0);  // S3: Reverse 24 Inches with 4 Sec timeout
 
 
         telemetry.addData("Path", "Complete");
         telemetry.update();
     }
 
-    /*
+    /**
      *  Method to perform a relative move, based on encoder counts.
      *  Encoders are not reset as the move is based on the current position.
      *  Move will stop if any of three conditions occur:

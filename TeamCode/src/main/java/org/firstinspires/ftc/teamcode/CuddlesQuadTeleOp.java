@@ -47,7 +47,7 @@ import com.qualcomm.robotcore.util.Range;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Drive code that <hopefully> works", group="Working")
+@TeleOp(name="Drive code", group="Working")
 //@Disabled
 public class CuddlesQuadTeleOp extends OpMode{
 
