@@ -60,8 +60,8 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="[crater] Encoder Auto (by distance)", group="Testing")
-@Disabled
+@Autonomous(name="Distance Auto [crater]", group="Testing")
+//@Disabled
 public class CuddlesSquadEncoderCrater extends LinearOpMode {
 
     /* Declare OpMode members. */
