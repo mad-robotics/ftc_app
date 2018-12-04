@@ -115,7 +115,7 @@ public class CuddlesSquadEncoderDepot extends LinearOpMode {
         sleep(1500);     // pause for servos to move
 
         encoderDrive(DRIVE_SPEED, -5.0, -5.0, 2.0);
-        encoderDrive(TURN_SPEED,  22.5, -22.5, 4.0); // S2: Turn Right 135 degrees with 4 Sec timeout
+        encoderDrive(TURN_SPEED, 22.5, -22.5, 4.0); // S2: Turn Right 135 degrees with 4 Sec timeout
         encoderDrive(DRIVE_SPEED, 80, 80, 7.0);      // S3: Reverse 24 Inches with 4 Sec timeout
 
 
