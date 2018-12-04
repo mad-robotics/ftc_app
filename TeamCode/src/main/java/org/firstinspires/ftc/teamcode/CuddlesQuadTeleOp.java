@@ -52,7 +52,7 @@ import com.qualcomm.robotcore.util.Range;
 public class CuddlesQuadTeleOp extends OpMode{
 
     /* Declare OpMode members. */
-    CuddlesQuadHardware robot = new CuddlesQuadHardware(); // use the class created to define a Pushbot's hardware
+    private CuddlesQuadHardware robot = new CuddlesQuadHardware(); // use the class created to define a Pushbot's hardware
                                                            // could also use HardwarePushbotMatrix class.
     final double    ARM_SPEED  = 0.02 ;                    // sets rate to move servo
 
@@ -95,7 +95,6 @@ public class CuddlesQuadTeleOp extends OpMode{
         left = gamepad1.left_stick_x * 2 + 1;
         right = gamepad1.left_stick_x * -2 + 1;
         gas = gamepad1.right_trigger;
-        mark = robot.carrier.getPosition();
 
         if(reverse != 0)
         {

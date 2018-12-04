@@ -86,7 +86,7 @@ public class CuddlesSquadEncoderDepot extends LinearOpMode {
         robot.init(hardwareMap);
 
         // Send telemetry message to signify robot waiting;
-        telemetry.addData("Status", "Resetting Encoders");    //
+        telemetry.addData("Status", "Resetting Encoders");
         telemetry.update();
 
         robot.leftDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -113,8 +113,8 @@ public class CuddlesSquadEncoderDepot extends LinearOpMode {
         robot.carrier.setPosition(0.0);
         sleep(1500);     // pause for servos to move
 
-        encoderDrive(DRIVE_SPEED, -8.0, -8.0, 2.0);
-        encoderDrive(TURN_SPEED,   22.5, -22.5, 4.0);  // Turn 135 degrees clockwise! S2: Turn Right 12 Inches with 4 Sec timeout
+        encoderDrive(DRIVE_SPEED, -5.0, -5.0, 2.0);
+        encoderDrive(TURN_SPEED,  22.5, -22.5, 4.0);  // Turn 135 degrees clockwise! S2: Turn Right 12 Inches with 4 Sec timeout
         encoderDrive(DRIVE_SPEED, 80, 80, 7.0);  // S3: Reverse 24 Inches with 4 Sec timeout
 
 
