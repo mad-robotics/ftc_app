@@ -60,8 +60,8 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="[crater] Encoder Auto (by distance)", group="Testing")
-@Disabled
+@Autonomous(name="Distance Auto [crater]", group="Testing")
+//@Disabled
 public class CuddlesSquadEncoderCrater extends LinearOpMode {
 
     /* Declare OpMode members. */
@@ -121,7 +121,7 @@ public class CuddlesSquadEncoderCrater extends LinearOpMode {
     }
 
     /*
-     *  Method to perfmorm a relative move, based on encoder counts.
+     *  Method to perform a relative move, based on encoder counts.
      *  Encoders are not reset as the move is based on the current position.
      *  Move will stop if any of three conditions occur:
      *  1) Move gets to the desired position

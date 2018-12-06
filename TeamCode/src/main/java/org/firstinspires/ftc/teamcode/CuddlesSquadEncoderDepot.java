@@ -106,16 +106,17 @@ public class CuddlesSquadEncoderDepot extends LinearOpMode {
 
         // Step through each leg of the path,
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
-        encoderDrive(DRIVE_SPEED,  48,  48, 5.0);  // S1: Forward 47 Inches with 5 Sec timeout
+        encoderDrive(DRIVE_SPEED,  48,  48, 5.0);    // S1: Forward 47 Inches with 5 Sec timeout
 
+        // Put marker down then pull servo back up
         robot.carrier.setPosition(1.0);
         sleep(1500);     // pause for servos to move
         robot.carrier.setPosition(0.0);
         sleep(1500);     // pause for servos to move
 
         encoderDrive(DRIVE_SPEED, -5.0, -5.0, 2.0);
-        encoderDrive(TURN_SPEED,  22.5, -22.5, 4.0);  // Turn 135 degrees clockwise! S2: Turn Right 12 Inches with 4 Sec timeout
-        encoderDrive(DRIVE_SPEED, 80, 80, 7.0);  // S3: Reverse 24 Inches with 4 Sec timeout
+        encoderDrive(TURN_SPEED, 22.5, -22.5, 4.0); // S2: Turn Right 135 degrees with 4 Sec timeout
+        encoderDrive(DRIVE_SPEED, 80, 80, 7.0);      // S3: Reverse 24 Inches with 4 Sec timeout
 
 
         telemetry.addData("Path", "Complete");
