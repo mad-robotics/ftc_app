@@ -103,7 +103,13 @@ public class CuddlesSquadEncoderCrater extends LinearOpMode {
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
-
+        robot.lifter.setPower(robot.ARM_DOWN_POWER);
+        sleep(3000);
+        robot.leftDrive.setPower(1);
+        robot.rightDrive.setPower(1);
+        sleep(1000);
+        robot.leftDrive.setPower(0);
+        robot.rightDrive.setPower(0);
         // Step through each leg of the path,
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
         /* GAME PLAN
@@ -136,6 +142,8 @@ public class CuddlesSquadEncoderCrater extends LinearOpMode {
 
         // Ensure that the opmode is still active
         if (opModeIsActive()) {
+
+
 
             // Determine new target position, and pass to motor controller
             newLeftTarget = robot.leftDrive.getCurrentPosition() + (int)(leftInches * COUNTS_PER_INCH);
