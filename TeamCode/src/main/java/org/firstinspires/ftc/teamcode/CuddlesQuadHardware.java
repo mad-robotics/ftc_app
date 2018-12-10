@@ -63,9 +63,6 @@ public class CuddlesQuadHardware
     public static final double ARM_DOWN_POWER  = -0.45;
     public Servo    carrier         = null;
 
-    public int xPosition = 3;
-    public int yPosition = 3;
-
     /* local OpMode members. */
     HardwareMap hwMap           = null;
     private ElapsedTime period  = new ElapsedTime();
