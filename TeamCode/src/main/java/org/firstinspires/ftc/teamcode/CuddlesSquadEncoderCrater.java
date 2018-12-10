@@ -107,8 +107,8 @@ public class CuddlesSquadEncoderCrater extends LinearOpMode {
         // Step through each leg of the path,
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
         /* GAME PLAN
-        Drive into right mineral (c-side)
-        Drive into left mineral  (d-side)
+        Drive into right mineral (crater side)
+        Drive into left mineral  (depot side)
         Deposit marker           (depot)
         Drive into crater        (crater)
          */
