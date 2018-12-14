@@ -53,14 +53,8 @@ public class CuddlesQuadTeleOp extends OpMode{
 
     /* Declare OpMode members. */
     private CuddlesQuadHardware robot = new CuddlesQuadHardware();  // use the class created to define a Pushbot's hardware
-                                                                    // could also use HardwarePushbotMatrix class.
-    final double    ARM_SPEED  = 0.02 ;                             // sets rate to move servo
-    
-    double left;
-    double right;
-    double gas;
-    double reverse;
-    double mark;
+
+    float left,right;
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -89,36 +83,9 @@ public class CuddlesQuadTeleOp extends OpMode{
 
     @Override
     public void loop() {
-
-        // Run wheels in tank mode (note: The joystick goes negative when pushed forwards, so negate it)
-        reverse = gamepad1.left_trigger;
-        left = gamepad1.left_stick_x * 2 + 1;
-        right = gamepad1.left_stick_x * -2 + 1;
-        gas = gamepad1.right_trigger;
-
-        if(reverse != 0)
-        {
-            left    *= -reverse;
-            right   *= -reverse;
-        }
-        else
-        {
-            left    *= gas;
-            right   *= gas;
-        }
-
-        if(gamepad1.left_stick_button)  left  *= 0.5;
-        if(gamepad1.right_stick_button) right *= 0.5;
-
+        left = -gamepad1.left_stick_y;
+        right = -gamepad1.right_stick_y;
         robot.drive(left,right);
-        // Use gamepad buttons to move the arm up (Y) and down (A)
-        robot.lifter.setPower(-gamepad1.right_stick_y);
-
-        if(gamepad1.left_bumper) mark += 0.05;
-        else if(gamepad1.right_bumper) mark -= 0.05;
-        mark = clip(mark,0,1);
-
-        robot.carrier.setPosition(mark);
 
         // Send telemetry message to signify robot running;
         telemetry.addData("left",  "%.2f", left);

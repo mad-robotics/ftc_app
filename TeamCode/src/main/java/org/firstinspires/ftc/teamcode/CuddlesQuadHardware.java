@@ -56,12 +56,6 @@ public class CuddlesQuadHardware
     /* Public OpMode members. */
     public DcMotor  leftDrive       = null;
     public DcMotor  rightDrive      = null;
-    public DcMotor  lifter          = null;
-
-    public static final double MID_SERVO       =  0.5;
-    public static final double ARM_UP_POWER    =  0.45;
-    public static final double ARM_DOWN_POWER  = -0.45;
-    public Servo    carrier         = null;
 
     /* local OpMode members. */
     HardwareMap hwMap           = null;
@@ -78,25 +72,19 @@ public class CuddlesQuadHardware
         hwMap = ahwMap;
 
         // Define and Initialize Motors
-        leftDrive  = hwMap.get(DcMotor.class, "leftDrive");
-        rightDrive = hwMap.get(DcMotor.class, "rightDrive");
-        lifter     = hwMap.get(DcMotor.class, "arm");
+        leftDrive  = hwMap.get(DcMotor.class, "l");
+        rightDrive = hwMap.get(DcMotor.class, "r");
         leftDrive.setDirection(DcMotor.Direction.REVERSE); // Set to REVERSE if using AndyMark motors
         rightDrive.setDirection(DcMotor.Direction.FORWARD);// Set to FORWARD if using AndyMark motors
 
         // Set all motors to zero power
         leftDrive.setPower(0);
         rightDrive.setPower(0);
-        lifter.setPower(0);
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
         leftDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         rightDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        lifter.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-
-        //Define and initialize ALL installed servos.
-        carrier = hwMap.get(Servo.class, "markerCarrier");
     }
 
     public void drive(double leftPower, double rightPower, double seconds) {
