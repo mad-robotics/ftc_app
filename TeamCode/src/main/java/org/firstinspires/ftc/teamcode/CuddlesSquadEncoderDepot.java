@@ -114,20 +114,22 @@ public class CuddlesSquadEncoderDepot extends LinearOpMode {
 
         // Step through each leg of the path,
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
-        encoderDrive(DRIVE_SPEED,  48,  48, 5.0);    // S1: Forward 47 Inches with 5 Sec timeout
+        encoderDrive(DRIVE_SPEED,  48,  48, 5.0, "to depot");    // S1: Forward 47 Inches with 5 Sec timeout
 
+        telemetry.addData("Step", "Drop marker");telemetry.update();
         // Put marker down then pull servo back up
         robot.carrier.setPosition(1.0);
         sleep(1500);     // pause for servos to move
         robot.carrier.setPosition(0.0);
         sleep(1500);     // pause for servos to move
 
-        encoderDrive(DRIVE_SPEED, -3.0, -3.0, 1.0);
-        encoderDrive(TURN_SPEED, 22.5, -22.5, 2.0); // S2: Turn Right 135 degrees with 4 Sec timeout
-        encoderDrive(DRIVE_SPEED, 80, 80, 7.0);      // S3: Reverse 24 Inches with 4 Sec timeout
+        encoderDrive(DRIVE_SPEED, -3.0, -3.0, 1.0, "back up");
+        encoderDrive(TURN_SPEED, 23, -22, 2.0,"turn towards crater"); // S2: Turn Right 135 degrees with 4 Sec timeout
+        encoderDrive(DRIVE_SPEED, 80, 80, 7.0,"Drive into crater");      // S3: Reverse 24 Inches with 4 Sec timeout
 
 
         telemetry.addData("Path", "Complete");
+        telemetry.addData("Mood", "p");
         telemetry.update();
     }
 
@@ -140,8 +142,8 @@ public class CuddlesSquadEncoderDepot extends LinearOpMode {
      *  3) Driver stops the opmode running.
      */
     public void encoderDrive(double speed,
-                             double leftInches, double rightInches,
-                             double timeoutS) {
+                             double lI, double rI,
+                             double t, String message) {
         int newLeftTarget;
         int newRightTarget;
 
@@ -149,8 +151,8 @@ public class CuddlesSquadEncoderDepot extends LinearOpMode {
         if (opModeIsActive()) {
 
             // Determine new target position, and pass to motor controller
-            newLeftTarget = robot.leftDrive.getCurrentPosition() + (int)(leftInches * COUNTS_PER_INCH);
-            newRightTarget = robot.rightDrive.getCurrentPosition() + (int)(rightInches * COUNTS_PER_INCH);
+            newLeftTarget = robot.leftDrive.getCurrentPosition() + (int) (lI * COUNTS_PER_INCH);
+            newRightTarget = robot.rightDrive.getCurrentPosition() + (int) (rI * COUNTS_PER_INCH);
             robot.leftDrive.setTargetPosition(newLeftTarget);
             robot.rightDrive.setTargetPosition(newRightTarget);
 
@@ -170,14 +172,15 @@ public class CuddlesSquadEncoderDepot extends LinearOpMode {
             // However, if you require that BOTH motors have finished their moves before the robot continues
             // onto the next step, use (isBusy() || isBusy()) in the loop test.
             while (opModeIsActive() &&
-                    (runtime.seconds() < timeoutS) &&
+                    (runtime.seconds() < t) &&
                     (robot.leftDrive.isBusy() && robot.rightDrive.isBusy())) {
 
                 // Display it for the driver.
-                telemetry.addData("Path1",  "Running to %7d :%7d", newLeftTarget,  newRightTarget);
-                telemetry.addData("Path2",  "Running at %7d :%7d",
+                telemetry.addData("Path1", "Running to %7d :%7d", newLeftTarget, newRightTarget);
+                telemetry.addData("Path2", "Running at %7d :%7d",
                         robot.leftDrive.getCurrentPosition(),
                         robot.rightDrive.getCurrentPosition());
+                if (!message.equals("")) telemetry.addData("Step",message);
                 telemetry.update();
             }
 
@@ -189,7 +192,13 @@ public class CuddlesSquadEncoderDepot extends LinearOpMode {
             robot.leftDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
             robot.rightDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-            //  sleep(250);   // optional pause after each move
+            sleep(100);   // optional pause after each move
         }
     }
-}
+    public void encoderDrive(double speed,
+                             double leftInches, double rightInches,
+                             double timeoutS) {
+        encoderDrive(speed, leftInches, rightInches, timeoutS, "");
+        }
+    }
+

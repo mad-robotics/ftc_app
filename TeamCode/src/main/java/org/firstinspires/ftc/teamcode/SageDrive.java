@@ -46,15 +46,15 @@ import com.qualcomm.robotcore.eventloop.opmode.*;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Drive code", group="Working")
+@TeleOp(name="Minibot GO!", group="Working")
 //@Disabled
-public class CuddlesQuadTeleOp extends OpMode{
+public class SageDrive extends OpMode{
 
     /* Declare OpMode members. */
     private CuddlesQuadHardware robot = new CuddlesQuadHardware();  // use the class created to define a Pushbot's hardware
-                                                                    // could also use HardwarePushbotMatrix class.
+    // could also use HardwarePushbotMatrix class.
     final double    ARM_SPEED  = 0.02 ;                             // sets rate to move servo
-    
+
     double left;
     double right;
     double gas;
@@ -74,52 +74,27 @@ public class CuddlesQuadTeleOp extends OpMode{
         telemetry.addData("Say", "Prepare yourself.");    //
     }
 
-     // Code to run REPEATEDLY after the driver hits INIT, but before they hit PLAY
+    // Code to run REPEATEDLY after the driver hits INIT, but before they hit PLAY
     @Override
     public void init_loop() {
     }
 
-     // Code to run ONCE when the driver hits PLAY
+    // Code to run ONCE when the driver hits PLAY
     @Override
     public void start() {
     }
 
-     // Code to run REPEATEDLY after the driver hits PLAY but before they hit STOP
+    // Code to run REPEATEDLY after the driver hits PLAY but before they hit STOP
 
     @Override
     public void loop() {
+        right = -gamepad1.right_stick_y;
+        left = -gamepad1.left_stick_y;
 
         // Run wheels in tank mode (note: The joystick goes negative when pushed forwards, so negate it)
-        reverse = gamepad1.left_trigger;
-        left = gamepad1.left_stick_x * 2 + 1;
-        right = gamepad1.left_stick_x * -2 + 1;
-        gas = gamepad1.right_trigger;
-
-        if(reverse != 0)
-        {
-            left    *= -reverse;
-            right   *= -reverse;
-        }
-        else
-        {
-            left    *= gas;
-            right   *= gas;
-        }
-
-        if(gamepad1.left_stick_button)  left  *= 0.5;
-        if(gamepad1.right_stick_button) right *= 0.5;
-
         robot.drive(left,right);
+
         // Use gamepad buttons to move the arm up (Y) and down (A)
-        robot.lifter.setPower(-gamepad1.right_stick_y);
-
-        if(gamepad1.left_bumper) mark += 0.05;
-        else if(gamepad1.right_bumper) mark -= 0.05;
-        mark = clip(mark,-0.05,1);
-
-        robot.carrier.setPosition(mark);
-
-        // Send telemetry message to signify robot running;
         telemetry.addData("left",  "%.2f", left);
         telemetry.addData("right", "%.2f", right);
         telemetry.addData("mood", ")");
