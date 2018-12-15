@@ -30,7 +30,6 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.*;
-import com.qualcomm.robotcore.util.Range;
 
 /**
  * This file provides basic Telop driving for a Pushbot robot.
@@ -132,18 +131,15 @@ public class CuddlesQuadTeleOp extends OpMode{
     public void stop() {
         telemetry.addData("Message", "Did we fail again?");
         telemetry.addData("I hope not. That'd be embarrassing ",")");
-        halt(2000);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     public static double clip(double input, double min, double max) {
         if (input<min) return min;
         if (input>max) return max;
         return input;
-    }
-    public void halt(int ms) {
-        try {
-            wait(ms);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }
