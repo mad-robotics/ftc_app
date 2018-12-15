@@ -104,13 +104,13 @@ public class CuddlesSquadEncoderDepot extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
-        robot.lifter.setPower(robot.ARM_DOWN_POWER);
-        sleep(3000);
-        robot.leftDrive.setPower(1);
-        robot.rightDrive.setPower(1);
-        sleep(1000);
-        robot.leftDrive.setPower(0);
-        robot.rightDrive.setPower(0);
+//        robot.lifter.setPower(robot.ARM_DOWN_POWER);
+//        sleep(3000);
+//        robot.leftDrive.setPower(1);
+//        robot.rightDrive.setPower(1);
+//        sleep(1000);
+//        robot.leftDrive.setPower(0);
+//        robot.rightDrive.setPower(0);
 
         // Step through each leg of the path,
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
@@ -122,8 +122,8 @@ public class CuddlesSquadEncoderDepot extends LinearOpMode {
         robot.carrier.setPosition(0.0);
         sleep(1500);     // pause for servos to move
 
-        encoderDrive(DRIVE_SPEED, -5.0, -5.0, 2.0);
-        encoderDrive(TURN_SPEED, 22.5, -22.5, 4.0); // S2: Turn Right 135 degrees with 4 Sec timeout
+        encoderDrive(DRIVE_SPEED, -3.0, -3.0, 1.0);
+        encoderDrive(TURN_SPEED, 22.5, -22.5, 2.0); // S2: Turn Right 135 degrees with 4 Sec timeout
         encoderDrive(DRIVE_SPEED, 80, 80, 7.0);      // S3: Reverse 24 Inches with 4 Sec timeout
 
 
