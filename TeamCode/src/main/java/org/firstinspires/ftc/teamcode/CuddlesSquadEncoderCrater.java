@@ -103,6 +103,7 @@ public class CuddlesSquadEncoderCrater extends LinearOpMode {
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
+        sleep(10000);
 //        robot.lifter.setPower(robot.ARM_DOWN_POWER);
 //        sleep(3000);
 //        robot.leftDrive.setPower(1);

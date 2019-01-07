@@ -55,11 +55,14 @@ public class CuddlesQuadTeleOp extends OpMode{
                                                                     // could also use HardwarePushbotMatrix class.
     final double    ARM_SPEED  = 0.02 ;                             // sets rate to move servo
     
-    double left;
-    double right;
-    double gas;
-    double reverse;
-    double mark;
+    double  left;
+    double  right;
+    double  gas;
+    double  reverse;
+    double  mark;
+    boolean toggle;
+    boolean togglePrev;
+    boolean pulse = false;
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -111,7 +114,12 @@ public class CuddlesQuadTeleOp extends OpMode{
 
         robot.drive(left,right);
         // Use gamepad buttons to move the arm up (Y) and down (A)
-        robot.lifter.setPower(-gamepad1.right_stick_y);
+        toggle = gamepad1.right_stick_button;
+        if (toggle && !togglePrev) pulse = !pulse;
+        togglePrev = toggle;
+
+        if(pulse) robot.lifter.setPower(0.25);
+        else robot.lifter.setPower(-gamepad1.right_stick_y);
 
         if(gamepad1.left_bumper) mark += 0.05;
         else if(gamepad1.right_bumper) mark -= 0.05;
