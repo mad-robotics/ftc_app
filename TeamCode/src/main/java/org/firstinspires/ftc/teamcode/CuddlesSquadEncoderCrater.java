@@ -113,12 +113,19 @@ public class CuddlesSquadEncoderCrater extends LinearOpMode {
 //        robot.rightDrive.setPower(0);
         // Step through each leg of the path,
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
-        /* GAME PLAN
-        Drive into right mineral (crater side)
-        Drive into left mineral  (depot side)
-        Deposit marker           (depot)
-        Drive into crater        (crater)
-         */
+        // GAME PLAN
+        encoderDrive(1, 20, 20, 3);
+        encoderDrive(0.8, -23, 22, 2.0); // S2: Turn Right 135 degrees with 4 Sec timeout
+        encoderDrive(1,80,80,6.0);
+        encoderDrive(1,-90,-90,6.0);
+
+        //Drive into left mineral  (depot side)
+
+        //Deposit marker           (depot)
+
+        //Drive into crater        (crater)
+
+        //
 
         robot.carrier.setPosition(1.0);
         sleep(1000);     // pause for servos to move
