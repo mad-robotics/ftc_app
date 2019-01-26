@@ -90,7 +90,7 @@ public class CuddlesQuadColorSensor extends LinearOpMode {
       }
   }
 
-  protected void runSample() throws InterruptedException {
+  protected void runSample() {
 
     // values is a reference to the hsvValues array.
     float[] hsvValues = new float[3];

@@ -118,14 +118,14 @@ public class CuddlesQuadTeleOp extends OpMode{
         if (toggle && !togglePrev) pulse = !pulse;
         togglePrev = toggle;
 
-        if(pulse) robot.lifter.setPower(0.25);
-        else robot.lifter.setPower(-gamepad1.right_stick_y);
+        //if(pulse) robot.lifter.setPower(0.25);
+        //else robot.lifter.setPower(-gamepad1.right_stick_y);
 
         if(gamepad1.left_bumper) mark += 0.05;
         else if(gamepad1.right_bumper) mark -= 0.05;
         mark = clip(mark,-0.05,1);
 
-        robot.carrier.setPosition(mark);
+        //robot.carrier.setPosition(mark);
 
         // Send telemetry message to signify robot running;
         telemetry.addData("left",  "%.2f", left);

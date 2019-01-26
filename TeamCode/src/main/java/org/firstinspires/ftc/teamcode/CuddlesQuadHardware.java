@@ -80,23 +80,23 @@ public class CuddlesQuadHardware
         // Define and Initialize Motors
         leftDrive  = hwMap.get(DcMotor.class, "leftDrive");
         rightDrive = hwMap.get(DcMotor.class, "rightDrive");
-        lifter     = hwMap.get(DcMotor.class, "arm");
+        //lifter     = hwMap.get(DcMotor.class, "arm");
         leftDrive.setDirection(DcMotor.Direction.REVERSE); // Set to REVERSE if using AndyMark motors
         rightDrive.setDirection(DcMotor.Direction.FORWARD);// Set to FORWARD if using AndyMark motors
 
         // Set all motors to zero power
         leftDrive.setPower(0);
         rightDrive.setPower(0);
-        lifter.setPower(0);
+        //lifter.setPower(0);
 
         // Set all motors to run without encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
         leftDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         rightDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        lifter.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //lifter.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         //Define and initialize ALL installed servos.
-        carrier = hwMap.get(Servo.class, "markerCarrier");
+        //carrier = hwMap.get(Servo.class, "markerCarrier");
     }
 
     public void drive(double leftPower, double rightPower, double seconds) {

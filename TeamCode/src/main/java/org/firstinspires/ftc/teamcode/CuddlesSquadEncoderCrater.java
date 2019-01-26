@@ -119,14 +119,6 @@ public class CuddlesSquadEncoderCrater extends LinearOpMode {
         encoderDrive(1,80,80,6.0);
         encoderDrive(1,-90,-90,6.0);
 
-        //Drive into left mineral  (depot side)
-
-        //Deposit marker           (depot)
-
-        //Drive into crater        (crater)
-
-        //
-
         robot.carrier.setPosition(1.0);
         sleep(1000);     // pause for servos to move
 
@@ -134,14 +126,14 @@ public class CuddlesSquadEncoderCrater extends LinearOpMode {
         telemetry.update();
     }
 
-    /*
+    /**
      *  Method to perform a relative move, based on encoder counts.
      *  Encoders are not reset as the move is based on the current position.
      *  Move will stop if any of three conditions occur:
      *  1) Move gets to the desired position
      *  2) Move runs out of time
      *  3) Driver stops the opmode running.
-     */
+     **/
     public void encoderDrive(double speed,
                              double leftInches, double rightInches,
                              double timeoutS) {
